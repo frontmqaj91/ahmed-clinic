@@ -1,26 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* لون الخلفية العام */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* الحقول */
+input {
+  background-color: #ffffff;
+  color: #111827 !important;         /* نص داكن جداً */
+  border: 1px solid #d1d5db;
+}
+
+input::placeholder {
+  color: #6b7280 !important;         /* placeholder واضح */
+  opacity: 1;
+}
+
+/* إزالة باهتية Safari على الموبايل */
+input,
+button {
+  -webkit-appearance: none;
+  opacity: 1;
+}
+
+/* أزرار الأيام والأوقات */
+button {
+  color: #111827 !important;
+  font-weight: 500;
+}
+
+/* عند التحديد */
+button.selected,
+.bg-purple-600 {
+  color: white !important;
 }
