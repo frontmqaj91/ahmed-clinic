@@ -59,9 +59,12 @@ export default function Home() {
         <p className="max-w-xl mx-auto mb-8 text-purple-400">
           طبيب عام يقدم خدمات طبية دقيقة وشاملة داخل البصرة – العراق
         </p>
-        <button className="px-6 py-3 bg-purple-400 hover:bg-purple-500 active:scale-95 text-white rounded-lg transition">
-          احجز موعد الآن
-        </button>
+       <button
+  onClick={() => window.location.href = "/booking"}
+  className="px-6 py-3 bg-purple-500 hover:bg-purple-600 active:scale-95 text-white rounded-lg transition"
+>
+  احجز موعد الآن
+</button>
       </section>
 
       {/* ABOUT */}
