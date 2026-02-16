@@ -35,10 +35,18 @@ export default function Home() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-white border-t shadow-sm">
-            <a href="#home" className="block px-4 py-3 border-b">الرئيسية</a>
-            <a href="#about" className="block px-4 py-3 border-b">عن الطبيب</a>
-            <a href="#services" className="block px-4 py-3 border-b">الخدمات</a>
-            <a href="#contact" className="block px-4 py-3">تواصل</a>
+            <a href="#home"
+            onChange={() => setIsOpen(false)}
+             className="block px-4 py-3 border-b">الرئيسية</a>
+            <a href="#about"
+            onClick={() => setIsOpen(false)}
+             className="block px-4 py-3 border-b">عن الطبيب</a>
+            <a href="#services"
+            onClick={() => setIsOpen(false)}
+             className="block px-4 py-3 border-b">الخدمات</a>
+            <a href="#contact"
+            onClick={() => setIsOpen(false)}
+             className="block px-4 py-3">تواصل</a>
           </div>
         )}
       </nav>
