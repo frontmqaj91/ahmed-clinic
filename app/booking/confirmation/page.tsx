@@ -1,9 +1,10 @@
 "use client";
-import { useEffect } from "react";
+
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const searchParams = useSearchParams();
 
   const phone = searchParams.get("phone");
@@ -14,10 +15,10 @@ export default function ConfirmationPage() {
     if (!phone || !day || !time) return;
 
     const newBooking = {
+      id: Date.now(),
       phone,
       day,
       time,
-      id: Date.now(),
     };
 
     const existing =
@@ -59,5 +60,13 @@ export default function ConfirmationPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+      <ConfirmationContent />
+    </Suspense>
   );
 }
